@@ -16,3 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dishes',"App\Http\Controllers\DishController@index");
+// Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\OrderController::class, 'index']);
+
+Auth::routes([
+    "register"=>false,
+    "reset"=>false,
+    'confirm'=>false,
+
+]);
